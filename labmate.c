@@ -54,6 +54,11 @@ void read_conflict(char * fname)
 
 
 	fp = fopen(fname, "r") ;  // TODO: handle file errors
+
+	if(fp==NULL){
+		printf("File does not exist.\nClosing the program.\n");
+		exit(1);
+	}
 	
 	while (getline(&b, &n, fp) > 0) {
 		int n_members ;
